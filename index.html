@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My ToDo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
         <h1>TODO List</h1>
-        <p style="color: grey;">Add, edit, and delete tasks.</p>
+        <p class="subtitle">Add, edit, and delete tasks.</p>
+      </header>
 
-        <div class="input-group">
-            <input type="text" id="myInput" placeholder="Write task here...">
-            <button onclick="newItem()">Add</button>
+      <section class="controls">
+        <form id="taskForm">
+          <input
+            id="taskInput"
+            type="text"
+            placeholder="e.g., Buy groceries"
+            maxlength="80"
+            autocomplete="off"
+          />
+          <button id="addBtn" type="submit">Add</button>
+        </form>
+        <div id="feedback" class="feedback"></div>
+      </section>
+
+      <section class="list">
+        <div class="list-head">
+          <h2>Tasks</h2>
+          <span id="count" class="count">0</span>
         </div>
 
-        <div class="list-container">
-            <h2>Tasks (<span id="counter">0</span>)</h2>
-            <ul id="myUL">
-                </ul>
-            <p id="noTasks">No tasks yet.</p>
-        </div>
-    </div>
+        <ul id="taskList" class="task-list"></ul>
+
+        <p id="emptyState" class="empty">No tasks yet. Add one above 👆</p>
+      </section>
+    </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
